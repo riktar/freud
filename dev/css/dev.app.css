@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
+#freud {
+  font-family: 'Roboto Slab', serif;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative; }
+  #freud * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; }
+  #freud .freud-icon {
+    transition: all 0.35s cubic-bezier(0.5, -0.5, 0.5, 1.7);
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: #ccc;
+    border-radius: 100%; }
+    #freud .freud-icon.__bot {
+      top: 0;
+      left: 0; }
+    #freud .freud-icon.__user {
+      opacity: 0;
+      top: 200px;
+      right: 0; }
+  #freud .freud-quote {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 20px 0;
+    flex-direction: row;
+    position: relative; }
+    #freud .freud-quote .freud-sentence {
+      order: 2;
+      max-width: 70%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      margin: 0 80px; }
+      #freud .freud-quote .freud-sentence .__r {
+        transition: all 0.35s cubic-bezier(0.5, -0.5, 0.5, 1.7);
+        transform: scale(0);
+        max-width: 100%;
+        margin-bottom: 10px;
+        padding: 10px 0;
+        text-align: left; }
+        #freud .freud-quote .freud-sentence .__r * {
+          max-width: 100%; }
+        #freud .freud-quote .freud-sentence .__r .freud-btn {
+          text-decoration: none;
+          padding: 4px 8px;
+          font-size: .8rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          border-radius: 3px;
+          background-color: #ff3e52;
+          color: #fff;
+          border: 0;
+          margin-right: 10px;
+          transition: all .25s ease-in-out; }
+          #freud .freud-quote .freud-sentence .__r .freud-btn:hover {
+            cursor: pointer;
+            background-color: rgba(146, 3, 19, 0.95); }
+      #freud .freud-quote .freud-sentence .__elem {
+        transition: all 0.35s cubic-bezier(0.5, -0.5, 0.5, 1.7);
+        transform: scale(0);
+        max-width: 100%;
+        background: #ffc6b0;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: left; }
+        #freud .freud-quote .freud-sentence .__elem * {
+          max-width: 100%; }
+    #freud .freud-quote:nth-child(even) {
+      flex-direction: row-reverse; }
+      #freud .freud-quote:nth-child(even) .freud-sentence {
+        align-items: flex-end; }
+        #freud .freud-quote:nth-child(even) .freud-sentence .__elem {
+          background: #ade0ff;
+          text-align: right; }
+        #freud .freud-quote:nth-child(even) .freud-sentence .__r {
+          text-align: right; }

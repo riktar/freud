@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/freud.min.css">
+</head>
+<body>
+
+<div id="freud">
+    <div id="bot-icon" class="freud-icon __bot"></div>
+    <div id="user-icon" class="freud-icon __user"></div>
+</div>
+
+
+<!--<div class="freud-quote">
+    <div class="freud-sentence">
+        <div class="__elem">Hi</div>
+        <div class="__elem"><img src="https://media.giphy.com/media/3oKHWh7Z04EjKWKyWY/giphy.gif"></div>
+    </div>
+
+</div>-->
+
+<script src="js/freud.min.js"></script>
+
+<script>
+        var nodes = {
+            "start" : {
+                wait: 200,
+                sentence: [
+                    {
+                        mex:'<strong>Ehi! Ciao!</strong> 👋👋',
+                        wait:500
+                    },
+                    {
+                        mex:'<img src="https://media.giphy.com/media/xT9IgmYU3ZVaCjGafm/giphy.gif">',
+                        wait:1000
+                    },
+                    {
+                        mex:'Come stai?',
+                        wait:1600
+                    }
+                ],
+                r: {
+                    wait:2000,
+                    type: "button",
+                    el: [
+                        {type: "nav", value: "q2", label:"Tutto Bene! Tu?"},
+                        {type: "action", value: function(){alert('FreudJS')}, label:"Come ti chiami?"},
+                        {type: "link", value: "http://www.google.it", label:"Fammi vedere google"}
+                    ]
+                }
+            },
+            "q2" : {
+                wait: 800,
+                sentence: [
+                    {
+                        mex:'<strong>Alla grande 💪</strong>',
+                        wait:0
+                    },
+                    {
+                        mex:'<img src="https://media.giphy.com/media/xHMIDAy1qkzNS/giphy.gif">',
+                        wait:700
+                    },
+                    {
+                        mex:'Hai avuto una dimostrazione di quello di cui sono capace',
+                        wait:1000
+                    }
+                ],
+                r: {
+                    wait:1000,
+                    type: "button",
+                    el: [
+                        {type: "nav", value: "q3", label:"Ok, ti saluto ❤️"},
+                    ]
+                }
+            },
+            "q3":{
+                wait: 800,
+                sentence: [{
+                    mex:'Ciao ❤️',
+                    wait:0
+                }],
+                r:{}
+            }
+
+        }
+
+        $freud.setNodes(nodes)
+        $freud.start();
+</script>
+
+</body>
+</html>

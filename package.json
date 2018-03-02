@@ -1,0 +1,25 @@
+{
+  "name": "FreudJS",
+  "version": "0.0.1",
+  "description": "Javascript plugin for Chatbot",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^8.0.31",
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-browser": "^3.0.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  },
+  "scripts": {
+    "build": "gulp",
+    "scripts": "gulp scripts",
+    "styles": "gulp styles",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
