@@ -26,78 +26,104 @@
 <script src="js/freud.min.js"></script>
 
 <script>
-        var nodes = {
-            "start" : {
-                wait: 200,
-                sentence: [
-                    {
-                        mex:'<strong>Ehi! Ciao!</strong> 👋👋',
-                        wait:500
-                    },
-                    {
-                        mex:'<img src="https://media.giphy.com/media/xT9IgmYU3ZVaCjGafm/giphy.gif">',
-                        wait:1000
-                    },
-                    {
-                        mex:'Come stai?',
-                        wait:1600
-                    }
-                ],
-                r: {
-                    wait:2000,
-                    type: "button",
-                    el: [
-                        {type: "nav", value: "q2", label:"Tutto Bene! Tu?"},
-                        {type: "action", value: function(){$freud.do('q3')}, label:"Come ti chiami?"},
-                        {type: "link", value: "http://www.google.it", label:"Fammi vedere google"}
-                    ]
+    var nodes = {
+        "start": {
+            wait: 200,
+            sentence: [
+                {
+                    mex: '<strong>Oh! Hi!</strong> 👋👋',
+                    wait: 500
+                },
+                {
+                    mex: '<img src="https://media.giphy.com/media/xT9IgmYU3ZVaCjGafm/giphy.gif">',
+                    wait: 1000
+                },
+                {
+                    mex: 'How are you?',
+                    wait: 1600
                 }
-            },
-            "q2" : {
-                wait: 800,
-                sentence: [
-                    {
-                        mex:'<strong>Alla grande 💪</strong>',
-                        wait:0
-                    },
-                    {
-                        mex:'<img src="https://media.giphy.com/media/xHMIDAy1qkzNS/giphy.gif">',
-                        wait:700
-                    },
-                    {
-                        mex:'Hai avuto una dimostrazione di quello di cui sono capace',
-                        wait:1000
-                    }
-                ],
-                r: {
-                    wait:1000,
-                    type: "button",
-                    el: [
-                        {type: "nav", value: "q3", label:"Ok, ti saluto ❤️"},
-                    ]
-                }
-            },
-            "q3":{
-                wait: 800,
-                sentence: [{
-                    mex:'Ciao ❤️',
-                    wait:0
-                }],
-                r:{}
-            },
-            "q3":{
-                wait: 200,
-                sentence: [{
-                    mex:'Nuovo elemento',
-                    wait:0
-                }],
-                r:{}
+            ],
+            r: {
+                wait: 2000,
+                type: "button",
+                el: [
+                    {type: "nav", value: "q2", label: "What!? a BOT?"},
+                    {type: "nav", value: "q3", label: "Who are you?"},
+                    //{type: "action", value: function(){$freud.do('about')}, label:"Who are you?"},
+                    //{type: "link", value: "http://www.google.it", label:"Show me Google"}
+                ]
             }
+        },
+        "q2": {
+            wait: 800,
+            sentence: [
+                {
+                    mex: '<strong>CORRECT! I\'m Freud 💪</strong><br>I\'m a BOT and I transform websites into <strong>Conversational Experiences</strong>',
+                    wait: 200
+                },
+                {
+                    mex: '<img src="https://media.giphy.com/media/xHMIDAy1qkzNS/giphy.gif">',
+                    wait: 700
+                },
+                {
+                    mex: 'I can make your business <h1>BIGGER!</h1>',
+                    wait: 1000
+                }
+            ],
+            r: {
+                wait: 1900,
+                type: "button",
+                el: [
+                    {type: "nav", value: "q4", label: "Wow! Tell me more!"},
+                ]
+            }
+        },
+        "q3": {
+            wait: 800,
+            sentence: [
+                {
+                    mex: '<strong>I\'m Freud</strong><br>I\'m a BOT and I transform websites into <strong>Conversational Experiences</strong>',
+                    wait: 200
+                },
+                {
+                    mex: '<img src="https://media.giphy.com/media/9Aep5gxCFrY7C/giphy.gif" height="300">',
+                    wait: 700
+                },
+                {
+                    mex: 'I can make your business <h1>BIGGER!</h1>',
+                    wait: 1000
+                }
+            ],
+            r: {
+                wait: 1900,
+                type: "button",
+                el: [
+                    {type: "nav", value: "q4", label: "Wow! Tell me more!"},
+                ]
+            }
+        },
+        "q4": {
+            wait: 500,
+            sentence: [
+                {
+                    mex: 'OK ❤️',
+                    wait: 0
+                }, {
+                    mex:
+                    'I can:<br><br>' +
+                    '1.Defining your goal: get leads, give support... 📈 <br>' +
+                    '2.Building the chatbot and customizing the design 🤖<br>' +
+                    '3.Run it on your web 💻<br>' +
+                    '4.Receiving leads on any app ⚡️',
+                    wait: 500
+                }
+            ],
+            r: {}
+        },
+    }
 
-        }
-
-        $freud.setNodes(nodes)
-        $freud.start();
+    $freud.setNodes(nodes)
+    $freud.start();
 </script>
 
 </body>

@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
 #freud {
+  padding: 0px;
   font-family: 'Roboto Slab', serif;
   max-width: 700px;
   margin: 0 auto;
-  padding: 0;
   box-sizing: border-box;
   position: relative; }
   #freud * {
@@ -30,14 +30,23 @@
     align-items: flex-start;
     justify-content: flex-start;
     margin: 20px 0;
-    flex-direction: row;
+    flex-direction: row-reverse;
     position: relative; }
+    #freud .freud-quote.__bot {
+      flex-direction: row; }
+      #freud .freud-quote.__bot .freud-sentence {
+        justify-content: flex-start; }
+        #freud .freud-quote.__bot .freud-sentence .__elem {
+          background: #ffc6b0;
+          text-align: left; }
+        #freud .freud-quote.__bot .freud-sentence .__r {
+          text-align: left; }
     #freud .freud-quote .freud-sentence {
       order: 2;
       max-width: 70%;
       display: flex;
       align-items: flex-start;
-      justify-content: flex-start;
+      justify-content: flex-end;
       flex-direction: column;
       margin: 0 80px; }
       #freud .freud-quote .freud-sentence .__r {
@@ -46,7 +55,7 @@
         max-width: 100%;
         margin-bottom: 10px;
         padding: 10px 0;
-        text-align: left; }
+        text-align: right; }
         #freud .freud-quote .freud-sentence .__r * {
           max-width: 100%; }
         #freud .freud-quote .freud-sentence .__r .freud-btn {
@@ -72,21 +81,12 @@
         transition: all 0.35s cubic-bezier(0.5, -0.5, 0.5, 1.7);
         transform: scale(0);
         max-width: 100%;
-        background: #ffc6b0;
+        background: #ade0ff;
         margin-bottom: 10px;
         padding: 10px;
         border-radius: 10px;
-        text-align: left; }
+        text-align: right; }
         #freud .freud-quote .freud-sentence .__elem * {
           max-width: 100%; }
-    #freud .freud-quote:nth-child(even) {
-      flex-direction: row-reverse; }
-      #freud .freud-quote:nth-child(even) .freud-sentence {
-        align-items: flex-end; }
-        #freud .freud-quote:nth-child(even) .freud-sentence .__elem {
-          background: #ade0ff;
-          text-align: right; }
-        #freud .freud-quote:nth-child(even) .freud-sentence .__r {
-          text-align: right; }
 
 /*# sourceMappingURL=dev.app.css.map */

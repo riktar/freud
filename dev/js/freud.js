@@ -67,13 +67,14 @@ class Freud {
                     switch (v.type) {
                         case 'nav':
                             btn.onclick = () => {
+                                element.style.transform = "scale(0)"
                                 self.createQuoteHuman(v.label)
                                 self.do(v.value)
                             }
                             break
                         case 'action':
                             btn.onclick = () => {
-                                self.createQuoteHuman(v.label)
+                                element.style.transform = "scale(0)"
                                 v.value()
                             }
                             break
@@ -96,6 +97,7 @@ class Freud {
 
             let box = quote.getBoundingClientRect();
             document.getElementById('bot-icon').style.top = (box.top + pageYOffset - 30) + "px"
+            window.scrollTo(0,document.body.scrollHeight);
 
         }, node.wait)
     }
@@ -124,6 +126,7 @@ class Freud {
         let box = quote.getBoundingClientRect();
         document.getElementById('user-icon').style.opacity = '1'
         document.getElementById('user-icon').style.top = (box.top + pageYOffset - 30) + "px"
+        window.scrollTo(0,document.body.scrollHeight);
     }
 
     /**
