@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Title</title>
 
     <link rel="stylesheet" href="css/freud.min.css">
@@ -47,7 +48,7 @@
                     type: "button",
                     el: [
                         {type: "nav", value: "q2", label:"Tutto Bene! Tu?"},
-                        {type: "action", value: function(){alert('FreudJS')}, label:"Come ti chiami?"},
+                        {type: "action", value: function(){$freud.do('q3')}, label:"Come ti chiami?"},
                         {type: "link", value: "http://www.google.it", label:"Fammi vedere google"}
                     ]
                 }
@@ -80,6 +81,14 @@
                 wait: 800,
                 sentence: [{
                     mex:'Ciao ❤️',
+                    wait:0
+                }],
+                r:{}
+            },
+            "q3":{
+                wait: 200,
+                sentence: [{
+                    mex:'Nuovo elemento',
                     wait:0
                 }],
                 r:{}

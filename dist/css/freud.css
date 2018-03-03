@@ -75,6 +75,7 @@
         #freud .freud-quote .freud-sentence .__r * {
           max-width: 100%; }
         #freud .freud-quote .freud-sentence .__r .freud-btn {
+          display: inline-block;
           text-decoration: none;
           padding: 4px 8px;
           font-size: .8rem;
@@ -90,6 +91,9 @@
           #freud .freud-quote .freud-sentence .__r .freud-btn:hover {
             cursor: pointer;
             background-color: rgba(146, 3, 19, 0.95); }
+          @media screen and (max-width: 400px) {
+            #freud .freud-quote .freud-sentence .__r .freud-btn {
+              margin-bottom: 10px; } }
       #freud .freud-quote .freud-sentence .__elem {
         -webkit-transition: all 0.35s cubic-bezier(0.5, -0.5, 0.5, 1.7);
         transition: all 0.35s cubic-bezier(0.5, -0.5, 0.5, 1.7);

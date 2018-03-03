@@ -11,10 +11,17 @@ class Freud {
         // Events
     }
 
+    /**
+     * Start from the first quote
+     */
     start() {
         this.do("start")
     }
 
+    /**
+     * Do a quote
+     * @param key
+     */
     do(key) {
         if (this._nodes.hasOwnProperty(key)) {
             let node = this._nodes[key]
@@ -24,11 +31,15 @@ class Freud {
         }
     }
 
+    /**
+     * Create a quote from the bot
+     * @param node
+     */
     createQuoteBot(node) {
         let self = this
         window.setTimeout(function () {
             let quote = document.createElement('div')
-            quote.classList.add('freud-quote')
+            quote.classList.add('freud-quote','__bot')
             let sentence = document.createElement('div')
             sentence.classList.add('freud-sentence')
 
@@ -62,6 +73,7 @@ class Freud {
                             break
                         case 'action':
                             btn.onclick = () => {
+                                self.createQuoteHuman(v.label)
                                 v.value()
                             }
                             break
@@ -88,6 +100,10 @@ class Freud {
         }, node.wait)
     }
 
+    /**
+     * Create a quote from the user
+     * @param v
+     */
     createQuoteHuman(v) {
         let quote = document.createElement('div')
         quote.classList.add('freud-quote')

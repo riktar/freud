@@ -20,11 +20,22 @@ var Freud = function () {
         // Events
     }
 
+    /**
+     * Start from the first quote
+     */
+
+
     _createClass(Freud, [{
         key: 'start',
         value: function start() {
             this.do("start");
         }
+
+        /**
+         * Do a quote
+         * @param key
+         */
+
     }, {
         key: 'do',
         value: function _do(key) {
@@ -35,13 +46,19 @@ var Freud = function () {
                 // error :(
             }
         }
+
+        /**
+         * Create a quote from the bot
+         * @param node
+         */
+
     }, {
         key: 'createQuoteBot',
         value: function createQuoteBot(node) {
             var self = this;
             window.setTimeout(function () {
                 var quote = document.createElement('div');
-                quote.classList.add('freud-quote');
+                quote.classList.add('freud-quote', '__bot');
                 var sentence = document.createElement('div');
                 sentence.classList.add('freud-sentence');
 
@@ -74,6 +91,7 @@ var Freud = function () {
                                 break;
                             case 'action':
                                 btn.onclick = function () {
+                                    self.createQuoteHuman(v.label);
                                     v.value();
                                 };
                                 break;
@@ -96,6 +114,12 @@ var Freud = function () {
                 document.getElementById('bot-icon').style.top = box.top + pageYOffset - 30 + "px";
             }, node.wait);
         }
+
+        /**
+         * Create a quote from the user
+         * @param v
+         */
+
     }, {
         key: 'createQuoteHuman',
         value: function createQuoteHuman(v) {
