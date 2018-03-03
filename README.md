@@ -1,6 +1,6 @@
-# Gulp + Browserify + Babel Starter #
+# Freud JS #
 
->Blank project with some Gulp's tasks prefixed
+>Javascript framework to your personal BOT
 
 ### Install Gulp
 
