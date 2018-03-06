@@ -1,7 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+body {
+  background: #eff2fa; }
+
 #freud {
   padding: 0px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Raleway', sans-serif;
   max-width: 700px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -16,12 +19,18 @@
     top: 0;
     width: 60px;
     height: 60px;
-    background: #ccc;
+    border: 1px solid #ccc;
     border-radius: 100%; }
     #freud .freud-icon.__bot {
+      background: url(https://media.giphy.com/media/9Aep5gxCFrY7C/giphy.gif) no-repeat;
+      background-size: cover;
+      background-position: center center;
       top: 0;
       left: 0; }
     #freud .freud-icon.__user {
+      background: url(https://media.giphy.com/media/9Aep5gxCFrY7C/giphy.gif) no-repeat;
+      background-size: cover;
+      background-position: center center;
       opacity: 0;
       top: 200px;
       right: 0; }
@@ -37,7 +46,8 @@
       #freud .freud-quote.__bot .freud-sentence {
         justify-content: flex-start; }
         #freud .freud-quote.__bot .freud-sentence .__elem {
-          background: #ffc6b0;
+          background: #fff;
+          color: #000;
           text-align: left; }
         #freud .freud-quote.__bot .freud-sentence .__r {
           text-align: left; }
@@ -61,16 +71,17 @@
         #freud .freud-quote .freud-sentence .__r .freud-btn {
           display: inline-block;
           text-decoration: none;
-          padding: 4px 8px;
-          font-size: .8rem;
+          padding: 1em 3em;
+          font-size: 1rem;
           font-weight: bold;
           text-transform: uppercase;
           border-radius: 3px;
-          background-color: #ff3e52;
+          background-color: #60428c;
           color: #fff;
           border: 0;
           margin-right: 10px;
-          transition: all .25s ease-in-out; }
+          transition: all .25s ease-in-out;
+          box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.45); }
           #freud .freud-quote .freud-sentence .__r .freud-btn:hover {
             cursor: pointer;
             background-color: rgba(146, 3, 19, 0.95); }
@@ -78,15 +89,15 @@
             #freud .freud-quote .freud-sentence .__r .freud-btn {
               margin-bottom: 10px; } }
       #freud .freud-quote .freud-sentence .__elem {
+        box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.45);
         transition: all 0.35s cubic-bezier(0.5, -0.5, 0.5, 1.7);
         transform: scale(0);
         max-width: 100%;
-        background: #ade0ff;
+        background: #cc1b9d;
+        color: #fff;
         margin-bottom: 10px;
         padding: 10px;
         border-radius: 10px;
         text-align: right; }
         #freud .freud-quote .freud-sentence .__elem * {
           max-width: 100%; }
-
-/*# sourceMappingURL=dev.app.css.map */
