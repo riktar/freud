@@ -10,18 +10,13 @@
 <body>
 
 <div id="freud">
-    <div id="bot-icon" class="freud-icon __bot"></div>
-    <div id="user-icon" class="freud-icon __user"></div>
-</div>
-
-
-<!--<div class="freud-quote">
-    <div class="freud-sentence">
-        <div class="__elem">Hi</div>
-        <div class="__elem"><img src="https://media.giphy.com/media/3oKHWh7Z04EjKWKyWY/giphy.gif"></div>
+    <div id="bot-icon" class="freud-icon __bot">
+        <img src="img/bot.png">
     </div>
-
-</div>-->
+    <div id="user-icon" class="freud-icon __user">
+        <img src="img/user.png">
+    </div>
+</div>
 
 <script src="js/freud.min.js"></script>
 
@@ -38,13 +33,9 @@
                     mex: '<img src="https://media.giphy.com/media/xT9IgmYU3ZVaCjGafm/giphy.gif">',
                     wait: 1000
                 },
-                {
-                    mex: 'How are you?',
-                    wait: 1600
-                }
             ],
             r: {
-                wait: 2000,
+                wait: 1800,
                 type: "button",
                 el: [
                     {type: "nav", value: "q2", label: "What!? a BOT?"},
@@ -55,7 +46,7 @@
             }
         },
         "q2": {
-            wait: 800,
+            wait: 600,
             sentence: [
                 {
                     mex: '<strong>CORRECT! I\'m Freud 💪</strong><br>I\'m a BOT and I transform websites into <strong>Conversational Experiences</strong>',
@@ -116,10 +107,34 @@
                     '3.Run it on your web 💻<br>' +
                     '4.Receiving leads on any app ⚡️',
                     wait: 500
+                }, {
+                    mex:
+                    'Please tell me your name!',
+                    wait: 600
                 }
             ],
-            r: {}
+            r: {
+                wait: 900,
+                type: "input",
+                el: [
+                    {
+                        label: "Your Name...",
+                        fn:(value) => {
+                            $freud.setVar('name', value);
+                            $freud.do('q5');
+                        }
+                    },
+                ]
+            }
         },
+        "q5": {
+            wait:300,
+            type: "text",
+            sentence:[{
+                mex:'<strong>Great</strong> {{name}}, as you see I can memorize everything!'
+            }],
+            r:{}
+        }
     }
 
     $freud.setNodes(nodes)
