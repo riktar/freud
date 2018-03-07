@@ -13,6 +13,7 @@ body {
           box-sizing: border-box;
   position: relative; }
   #freud.chat {
+    background: #fff;
     width: 300px;
     position: fixed;
     bottom: 0;

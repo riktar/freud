@@ -5,12 +5,16 @@ class Freud {
      */
     constructor() {
         // Params
-        this._el = document.getElementById('freud')
+        this._el = null
         this._vars = {}
         this._nodes = {}
         this._regex = /[{]{2}(\S*)[}]{2}/g;
+    }
 
-        // Events
+    init(elSelector, nodes = {}){
+        this._el = document.querySelector(elSelector);
+        this.setNodes(nodes)
+        this.start()
     }
 
     /**
@@ -148,6 +152,7 @@ class Freud {
             let box = quote.getBoundingClientRect();
             document.getElementById('bot-icon').style.top = (box.top + pageYOffset - 22) + "px"
             window.scrollTo(0, document.body.scrollHeight);
+            //self._el.scrollTo(0, self._el.scrollHeight);
 
         }, node.wait)
     }
@@ -177,6 +182,7 @@ class Freud {
         document.getElementById('user-icon').style.opacity = '1'
         document.getElementById('user-icon').style.top = (box.top + pageYOffset  - 22) + "px"
         window.scrollTo(0, document.body.scrollHeight);
+        //this._el.scrollTo(0, this._el.scrollHeight);
     }
 
     /**

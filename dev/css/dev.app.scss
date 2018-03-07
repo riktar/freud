@@ -25,6 +25,7 @@ body {
   box-sizing: border-box;
   position: relative;
   &.chat{
+    background: #fff;
     width:300px;
     position: fixed;
     bottom:0; right:0;
