@@ -3,11 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Title</title>
+    <title>Freud JS - Javascript library for create Chatbot and Conversational Experiences</title>
+    <meta name="description" content="Freud JS is Javascript library for create conversational website or make chatbots for increase your leads.">
 
     <link rel="stylesheet" href="css/freud.min.css">
 </head>
 <body>
+
+<div style="text-align: center; margin:40px auto;"><img style="max-width: 100%;" src="img/header.png"></div>
 
 <div id="freud">
     <div id="bot-icon" class="freud-icon __bot">
@@ -38,7 +41,7 @@
                 wait: 1800,
                 type: "button",
                 el: [
-                    {type: "nav", value: "q2", label: "What!? a BOT?"},
+                    {type: "nav", value: "q2", label: "What!? a chatbot?"},
                     {type: "nav", value: "q3", label: "Who are you?"},
                     //{type: "action", value: function(){$freud.do('about')}, label:"Who are you?"},
                     //{type: "link", value: "http://www.google.it", label:"Show me Google"}
@@ -49,7 +52,7 @@
             wait: 600,
             sentence: [
                 {
-                    mex: '<strong>CORRECT! I\'m Freud 💪</strong><br>I\'m a BOT and I transform websites into <strong>Conversational Experiences</strong>',
+                    mex: '<strong>Yes! I\'m FreudJS a Javascript library for make chatbot 💪</strong><br>I can transform websites into <strong>Conversational Experiences</strong>',
                     wait: 200
                 },
                 {
@@ -73,11 +76,11 @@
             wait: 800,
             sentence: [
                 {
-                    mex: '<strong>I\'m Freud</strong><br>I\'m a BOT and I transform websites into <strong>Conversational Experiences</strong>',
+                    mex: '<strong>I\'m FreudJS a Javascript library for make chatbot 💪</strong><br>I can transform websites into <strong>Conversational Experiences</strong>',
                     wait: 200
                 },
                 {
-                    mex: '<img src="https://media.giphy.com/media/9Aep5gxCFrY7C/giphy.gif" height="300">',
+                    mex: '<img src="https://media.giphy.com/media/9Aep5gxCFrY7C/giphy.gif" width="270">',
                     wait: 700
                 },
                 {
@@ -105,11 +108,12 @@
                     '1.Defining your goal: get leads, give support... 📈 <br>' +
                     '2.Building the chatbot and customizing the design 🤖<br>' +
                     '3.Run it on your web 💻<br>' +
-                    '4.Receiving leads on any app ⚡️',
+                    '4.Receiving leads on any app ⚡<br><br>' +
+                    'I can manage also your data!️',
                     wait: 800
                 }, {
                     mex:
-                    'Please tell me your name!',
+                        'Please tell me your name!',
                     wait: 1600
                 }
             ],
@@ -119,21 +123,72 @@
                 el: [
                     {
                         label: "Your Name...",
-                        fn:(value) => {
-                            $freud.setVar('name', value);
-                            $freud.do('q5');
+                        fn: function (value) {
+                            if(value === '' || value === undefined){
+                                $freud.do('error');
+                            } else {
+                                $freud.setVar('name', value);
+                                $freud.do('q5');
+                            }
+                        }
+                    },
+                ]
+            }
+        },
+        "error": {
+            wait: 500,
+            sentence: [
+                {
+                    mex:
+                        'You have no name? Don\'t be shy!',
+                    wait: 0
+                }
+            ],
+            r: {
+                wait: 700,
+                type: "input",
+                el: [
+                    {
+                        label: "Tell me your name...",
+                        fn: function (value) {
+                            if(value === '' || value === undefined){
+                                $freud.do('error');
+                            } else {
+                                $freud.setVar('name', value);
+                                $freud.do('q5');
+                            }
                         }
                     },
                 ]
             }
         },
         "q5": {
-            wait:800,
+            wait: 800,
             type: "text",
-            sentence:[{
-                mex:'<strong>Great</strong> {{name}}, as you see, I can memorize everything!'
-            }],
-            r:{}
+            sentence: [
+                {
+                    mex: 'Great <strong>{{name}}</strong>, as you see, I can memorize everything!'
+                },
+                {
+                    mex:
+                        'If you want make a Bot or make a simple chat you can contact my creator:<br><strong><a href="https://twitter.com/RikTarWeb" target="_blank">@riktarweb</a></strong>',
+                    wait: 400
+                },
+                {
+                    mex:
+                        '<img src="img/me.jpg">',
+                    wait: 600
+                }
+            ],
+            r: {
+                wait: 800,
+                type: "button",
+                el: [
+                    {type: "link", value: "https://riccardotartaglia.it/", label:"Visit Website"},
+                    {type: "link", value: "https://www.linkedin.com/in/riccardo-tartaglia/", label:"LinkedIn"},
+                    {type: "nav", value: "start", label: "Restart Conversation"},
+                ]
+            }
         }
     }
 

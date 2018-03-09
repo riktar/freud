@@ -77,6 +77,7 @@ var Freud = function () {
                 self._el.appendChild(quote);
 
                 node.sentence.map(function (v) {
+                    var mexParse = v.mex;
                     var element = document.createElement('div');
                     element.classList.add('__elem');
                     // sostituisco i placeholder {{}} con il valore della variabile richiesto
@@ -94,12 +95,12 @@ var Freud = function () {
                                 findgr = match;
                             } else {
                                 //sostituisco il placeholder con la variabile
-                                v.mex = v.mex.replace(findgr, self.getVar(match));
+                                mexParse = mexParse.replace(findgr, self.getVar(match));
                             }
                         });
                     }
                     // faccio l'append del messaggio
-                    element.innerHTML = v.mex;
+                    element.innerHTML = mexParse;
                     sentence.appendChild(element);
                     window.setTimeout(function () {
                         element.style.transform = "scale(1)";
@@ -172,7 +173,8 @@ var Freud = function () {
                 }, node.r.wait);
 
                 var box = quote.getBoundingClientRect();
-                document.getElementById('bot-icon').style.top = box.top + pageYOffset - 22 + "px";
+                var freudtop = self._el.getBoundingClientRect();
+                document.getElementById('bot-icon').style.top = box.top - freudtop.top + "px";
                 window.scrollTo(0, document.body.scrollHeight);
                 //self._el.scrollTo(0, self._el.scrollHeight);
             }, node.wait);
@@ -202,8 +204,9 @@ var Freud = function () {
             }, v.wait);
 
             var box = quote.getBoundingClientRect();
+            var freudtop = this._el.getBoundingClientRect();
             document.getElementById('user-icon').style.opacity = '1';
-            document.getElementById('user-icon').style.top = box.top + pageYOffset - 22 + "px";
+            document.getElementById('user-icon').style.top = box.top - freudtop.top + "px";
             window.scrollTo(0, document.body.scrollHeight);
             //this._el.scrollTo(0, this._el.scrollHeight);
         }
@@ -271,9 +274,6 @@ var Freud = function () {
                 delete this._nodes[key];
             }
         }
-    }, {
-        key: 'moveIcon',
-        value: function moveIcon(icon) {}
     }, {
         key: 'setVar',
         value: function setVar(key, variabile) {

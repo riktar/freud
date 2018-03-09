@@ -15,6 +15,12 @@ $btnbg: #60428c;
 
 body {
   background: #eff2fa;
+  font-family: 'Raleway', sans-serif;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
 
 #freud {
@@ -24,23 +30,30 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
   position: relative;
-  &.chat{
+
+  &.chat {
     background: #fff;
-    width:300px;
+    width: 300px;
     position: fixed;
-    bottom:0; right:0;
+    bottom: 0;
+    right: 0;
     height: 400px;
     border: $userborder;
     overflow-x: hidden;
     overflow-y: scroll;
-    .freud-icon {display: none;}
+    .freud-icon {
+      display: none;
+    }
     .freud-quote {
       .freud-sentence {
         margin: 0 10px;
         max-width: 100%;
-        .__r{
-          .freud-btn{
-            margin-bottom:10px; padding:.5em .8em; width: 100%; text-align: center;
+        .__r {
+          .freud-btn {
+            margin-bottom: 10px;
+            padding: .5em .8em;
+            width: 100%;
+            text-align: center;
           }
         }
       }
@@ -55,14 +68,15 @@ body {
   .freud-icon {
     transition: $transition;
     position: absolute;
-    top: 1em;
     width: 60px;
     height: 60px;
     border: 1px solid #ccc;
     border-radius: 100%;
     box-shadow: $shadow;
     overflow: hidden;
-    & img{width:100%;}
+    & img {
+      width: 100%;
+    }
     &.__bot {
       background: #fff;
       top: 0;
@@ -70,7 +84,7 @@ body {
     }
     &.__user {
       opacity: 0;
-      top: 200px;
+      top: 0;
       right: 0;
     }
   }
@@ -119,10 +133,9 @@ body {
         .freud-btn {
           display: inline-block;
           text-decoration: none;
-          padding: 1em 3em;
+          padding: .6em 1.2em;
           font-size: 1em;
-          font-weight: bold;
-          text-transform: uppercase;
+          font-weight: 700;
           border-radius: 3px;
           background-color: $btnbg;
           color: #fff;
@@ -138,13 +151,13 @@ body {
             margin-bottom: 10px;
           }
         }
-        .freud-input{
-          padding:1em;
+        .freud-input {
+          padding: 1em;
           border: $userborder;
           border-color: $userbg;
-          position:relative;
+          position: relative;
           display: block;
-          width:100%;
+          width: 100%;
           border-radius: 3px;
           transition: all .25s ease-in-out;
           box-shadow: $shadow;
@@ -166,6 +179,18 @@ body {
           max-width: 100%;
           border-radius: 15px;
         }
+      }
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .freud-icon {
+      width: 30px;
+      height: 30px
+    }
+    .freud-quote {
+      .freud-sentence {
+        margin: 0 40px;
+        max-width: 100%;
       }
     }
   }

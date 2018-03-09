@@ -55,6 +55,7 @@ class Freud {
             self._el.appendChild(quote)
 
             node.sentence.map((v) => {
+                let mexParse = v.mex
                 let element = document.createElement('div')
                 element.classList.add('__elem')
                 // sostituisco i placeholder {{}} con il valore della variabile richiesto
@@ -71,12 +72,12 @@ class Freud {
                             findgr = match;
                         } else {
                             //sostituisco il placeholder con la variabile
-                            v.mex = v.mex.replace(findgr, self.getVar(match))
+                            mexParse = mexParse.replace(findgr, self.getVar(match))
                         }
                     });
                 }
                 // faccio l'append del messaggio
-                element.innerHTML = v.mex;
+                element.innerHTML = mexParse;
                 sentence.appendChild(element)
                 window.setTimeout(function () {
                     element.style.transform = "scale(1)"
@@ -150,7 +151,8 @@ class Freud {
 
 
             let box = quote.getBoundingClientRect();
-            document.getElementById('bot-icon').style.top = (box.top + pageYOffset - 22) + "px"
+            let freudtop = self._el.getBoundingClientRect()
+            document.getElementById('bot-icon').style.top = (box.top - freudtop.top) + "px"
             window.scrollTo(0, document.body.scrollHeight);
             //self._el.scrollTo(0, self._el.scrollHeight);
 
@@ -179,8 +181,9 @@ class Freud {
 
 
         let box = quote.getBoundingClientRect();
+        let freudtop = this._el.getBoundingClientRect()
         document.getElementById('user-icon').style.opacity = '1'
-        document.getElementById('user-icon').style.top = (box.top + pageYOffset  - 22) + "px"
+        document.getElementById('user-icon').style.top = (box.top - freudtop.top) + "px"
         window.scrollTo(0, document.body.scrollHeight);
         //this._el.scrollTo(0, this._el.scrollHeight);
     }
@@ -232,10 +235,6 @@ class Freud {
         if (this._nodes.hasOwnProperty(key)) {
             delete(this._nodes[key]);
         }
-    }
-
-    moveIcon(icon) {
-
     }
 
     setVar(key, variabile) {
